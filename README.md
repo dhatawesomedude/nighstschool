@@ -1,8 +1,8 @@
 nighstschool
 ============
 
-**How to run
-============
+###How to run
 
--`cd /bin`
--run `node www.js`
+
+    `cd /bin`
+    run `node www.js`
