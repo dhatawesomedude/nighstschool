@@ -5,4 +5,5 @@ nighstschool
 
 
     `cd /bin`
-    run `node www.js`
+========
+     run `node www`
