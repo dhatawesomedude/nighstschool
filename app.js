@@ -6,12 +6,36 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var url = require('url');
 var router = express.Router();
+var mongoose = require('mongoose');
+
 
 /*
  * Routes
  */
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var rCourses = require('./routes/courses');
+
+/*
+ *mongoose connection
+ */
+var dbURI = "mongodb://nightschoolmaster:nightschool2mediaprima@kahana.mongohq.com:10095/nightschool";
+
+mongoose.connect(process.env.MONGOHQ_URL || dbURI);
+//successful mongoose connection
+mongoose.connection.on('connected', function(){
+    console.log('Mongoose connected to' + dbURI)
+});
+mongoose.connection.on('disconnected', function(){
+    console.log('Mongoose disconnected');
+});
+//Close mongoose connection if node process ends
+process.on('SIGINT', function(){
+    mongoose.connection.close(function(){
+        console.log('Mongoose default connection disconnected through app termination');
+        process.exit(0);
+    })
+});
 
 var app = express();
 
@@ -37,6 +61,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  * REST API
  */
 app.use('/', router);
+
+router.post('/courses/find', rCourses.find);
 router.get('*', function(req, res){
     res.sendfile('./public/index.html');
 });
