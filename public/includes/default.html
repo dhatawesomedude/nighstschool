@@ -1,0 +1,37 @@
+<div class="col-md-5" style="background-color: #47b4c6; color: #FFF; padding-right: 31px; height: 750px;">
+	<div class="row">
+		<img src="images/nightschoolasia_logo.png" style="width: 450px; margin-top: 200px;" />
+	</div>
+</div>
+<div class="col-md-7" style="padding-left: 30px; margin-top: 100px;">
+	<div class="row">
+		<div class="col-md-6">
+			<form role="form">
+			  <div class="form-group">
+			    <label for="username">Username : </label>
+			    <input type="text" class="form-control" id="username" />
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password : </label>
+			    <input type="password" class="form-control" id="exampleInputPassword1" />
+			  </div>
+			  <div class="form-group pull-right">
+			  	<a href="#">Forgot Password?</a>
+			  </div>
+			  <button type="button" class="btn btn-warning" id="signinBtn">Sign Up</button>
+			  <button type="button" class="btn btn-success" id="loginBtn">Login</button>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<img id="socialLogin" src="images/SocialLogin.png" />
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("nav#mainMenu").hide();
+$("#loginBtn, #socialLogin").on("click", function() {
+	$("#mainDisplay").load("includes/preview.html");
+});
+</script>
