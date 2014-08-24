@@ -53,7 +53,7 @@
 								<h2>Vishen Lakhiani</h2>
 							</div>
 							<div class="col-md-6" style="padding-top: 20px;">
-								<button type="button" class="btn btn-default" style="float: right;">RM 30.00</button>
+								<button type="button" class="btn btn-default toPaidView" style="float: right;">RM 30.00</button>
 							</div>
 						</div>
 				  		<div class="row">
@@ -241,3 +241,10 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+$("nav#mainMenu").show();
+$(".toPaidView").on("click", function() {
+	$("#mainMenu").load("includes/mainMenu.html");
+	$("#mainDisplay").load("includes/paidview.html");
+});
+</script>
