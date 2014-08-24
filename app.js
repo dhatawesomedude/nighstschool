@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var url = require('url');
 var router = express.Router();
 var mongoose = require('mongoose');
+var vidStreamer = require("vid-streamer");
 
 
 /*
@@ -15,6 +16,7 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var rCourses = require('./routes/courses');
+var rVideos = require('./routes/videos');
 
 /*
  *mongoose connection
@@ -40,8 +42,8 @@ process.on('SIGINT', function(){
 var app = express();
 
 // view engine setup
-/*app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');*/
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 app.use(favicon());
 //development only logger
@@ -53,17 +55,27 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'videos')));
 
 //app.use('/', routes);
 //app.use('/users', users);
+/**
+ * video streamer
+ */
+
+//app.get("/videos/", vidStreamer);
 
 /**
  * REST API
  */
 app.use('/', router);
 
+//router.get('/videos', rVideos.play);
+router.get('/videos', function(req, res, next){
+    res.sendfile('./videos/video.mp4');
+});
 router.post('/courses/find', rCourses.find);
-router.get('*', function(req, res){
+router.get('/', function(req, res){
     res.sendfile('./public/index.html');
 });
 /// catch 404 and forward to error handler
