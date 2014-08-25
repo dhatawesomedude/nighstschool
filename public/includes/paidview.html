@@ -1,0 +1,94 @@
+<div class="row">
+	<div class="col-md-8" style="background-color: #47b4c6; color: #FFF; padding-left: 31px; padding-top: 10px; padding-right: 31px;">
+		<div class="row">
+			<div id="video-player">
+				<h1>Video goes here.</h1>
+				<p>The following button SHOULD NOT appear. It should be a script trigger.</p>
+				<button type="button" id="endVideo">End Video</button>
+			</div>
+  		</div>
+  		<div class="row">
+  			<p><span class="glyphicon glyphicon-chevron-left"></span> EARLY MATH</p>
+  		</div>
+  		<div class="row">
+  			<h1>
+  				Course Name
+  			</h1>
+  			<span style="float: right; margin-top: -35px;">
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+			</span>
+  		</div>
+  		<div class="row">
+  			<hr/>
+  			<p>People enrolled: ________</p>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-4">
+  				<span class="glyphicon glyphicon-play"></span>&nbsp;videolength
+  			</div>
+  			<div class="col-md-4">
+  				<span class="glyphicon glyphicon-volume-down"></span>&nbsp;language
+  			</div>
+  			<div class="col-md-4">
+  				<span class="glyphicon glyphicon-subtitles"></span>&nbsp;subtitle
+  			</div>
+  		</div>
+  		<div class="row">
+  			<p>Video description</p>
+  		</div>
+	</div>
+	<div class="col-md-4" style="padding-left: 30px;">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#speaker" role="tab" data-toggle="tab">Speaker</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="row">
+						<p>
+							Slide 1: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+						<p>
+							Slide 2: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+						<p>
+							Slide 3: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+						<p>
+							Slide 4: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+						<p>
+							Slide 5: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+						<p>
+							Slide 6: Lorem ipsum
+							<hr />
+							<img src="http://placehold.it/200x100" />
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("nav#mainMenu").show();
+$("button#endVideo").on("click", function() {
+	$("#mainMenu").load("includes/mainMenu.html");
+	$("#mainDisplay").load("includes/aftervideo.html");	
+})
+</script>
