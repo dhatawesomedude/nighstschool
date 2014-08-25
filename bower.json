@@ -1,0 +1,14 @@
+{
+  "name": "starter-node-angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-resource": "latest",
+    "ngvideo": "~0.4.9",
+    "videogular": "~0.4.2"
+  }
+}
