@@ -41,6 +41,11 @@ process.on('SIGINT', function(){
 
 var app = express();
 
+/*
+ *trust proxy for nginx config
+ */
+
+ app.enable('trust proxy');
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
